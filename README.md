@@ -87,7 +87,7 @@ if (Meteor.isServer) {
 	console.log('about to run queue');
 	Queue.run();
 	console.log('done with the first run');
-	future = new Date();
+	var future = new Date();
 	future.setMinutes(future.getMinutes() + 1);
 	Queue.add({command:'console.log("queue called in THE FUTURE");',execute_after:future});
 	future.setMinutes(future.getMinutes() + 1);
